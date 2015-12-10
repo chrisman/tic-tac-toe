@@ -4,6 +4,7 @@ var browserify = require('browserify')
 var source = require('vinyl-source-stream')
 var streamify = require('gulp-streamify')
 var uglify = require('gulp-uglify')
+var es = require('event-stream')
 
 var sass = require('gulp-sass')
 var normalize = require('node-normalize-scss')
@@ -32,19 +33,19 @@ gulp.task('styles', function(){
     .pipe(cssmin())
 })
 
-gulp.task('js', function(){
-  browserify('src/js/main.js')
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe(streamify(uglify()))
-    .pipe(gulp.dest('public/js'))
-})
+gulp.task('js', function() {
+  var files = [
+    'src/js/main.js',
+    'src/js/game.js'
+  ]
 
-gulp.task('test', function() {
-  browserify('src/js/game.js')
-    .bundle()
-    .pipe(source('game.js'))
-    .pipe(gulp.dest('public/js'));
+  var tasks = files.map(function(entry){
+    return browserify({ entries: [entry]})
+      .bundle()
+      .pipe(source(entry.split('/')[2]))
+      .pipe(gulp.dest('public/js'))
+  })
+  return es.merge.apply(null, tasks)
 });
 
 gulp.task('clean', function(){
