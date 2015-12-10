@@ -1,0 +1,9 @@
+{
+  "firebase": "3dtictactoe",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

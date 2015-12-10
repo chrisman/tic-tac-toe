@@ -1,0 +1,38 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "This is a game of tic-tac-toe, except it's not just normal tic-tac-toe. it's _3D TIC TAC TOE_, which means it's bigger in every way.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisman/tic-tac-toe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisman/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/chrisman/tic-tac-toe#readme",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-image": "^1.2.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.1",
+    "jasmine": "^2.4.1",
+    "node-normalize-scss": "^1.0.3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}
