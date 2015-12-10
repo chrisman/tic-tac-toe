@@ -1,3 +1,58 @@
+$font-stack: Avenir, sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(241, 183, 211);
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  width: 100vw;
+}
+
+header {
+  background-color: rgb(40, 7, 176);
+  h2 {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+  }
+}
+footer {
+  background-color: rgb(198, 15, 199);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  p {
+    margin: 0 auto;
+  }
+  button {
+    border-radius: 5px;
+    min-width: 200px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    cursor: pointer;
+  }
+}
+
+#pvc, #pvpo {
+  color: #ddd;
 }
