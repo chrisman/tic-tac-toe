@@ -1,0 +1,22 @@
+#game {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+  div {
+    width: 100 / 3 * 100%;
+  }
+  #player1 {
+    background-color: rgb(27, 19, 84);
+    order: 1;
+  }
+  #player2 {
+    background-color: rgb(168, 186, 101);
+    order: 3;
+  }
+  #gameboard {
+    background-color: rgb(184, 51, 36);
+    order: 2;
+  }
+}

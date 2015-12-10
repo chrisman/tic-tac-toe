@@ -26,7 +26,7 @@ var sassOptions = {
   includePaths: normalize.includePaths
 }
 gulp.task('styles', function(){
-  return gulp.src('src/sass/main.scss')
+  return gulp.src('src/sass/*scss')
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(gulp.dest('public/css'))
     .pipe(cssmin())

@@ -1,5 +1,12 @@
 extends ./layouts/layout
 
+block linkblock
+  link(rel="stylesheet", type="text/css", href="css/main.css")
+  link(rel="stylesheet", type="text/css", href="css/game.css")
+block scriptblock
+  
 block thiscontent
   #game
-    h3 let's begin
+    #player1 Player 1!
+    #player2 Player 2!
+    #gameboard (game board)
