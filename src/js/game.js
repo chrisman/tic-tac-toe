@@ -1,10 +1,13 @@
-function begin(){
-  output("Hello", " ", "World", "!")
-}
+module.exports = {
 
-function output(){
-  var args = Array.prototype.slice.call(arguments)
-  console.log(args.join(''));
-}
+  begin: function(){
+    output("Hello", " ", "World", "!")
+    return
+  },
 
-module.exports = begin()
+  output: function(){
+    var args = Array.prototype.slice.call(arguments)
+    console.log(args.join(''));
+    return
+  }
+}

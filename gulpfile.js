@@ -33,12 +33,19 @@ gulp.task('styles', function(){
 })
 
 gulp.task('js', function(){
-  return browserify('src/js/main.js')
+  browserify('src/js/main.js')
     .bundle()
     .pipe(source('main.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest('public/js'))
 })
+
+gulp.task('test', function() {
+  browserify('src/js/game.js')
+    .bundle()
+    .pipe(source('game.js'))
+    .pipe(gulp.dest('public/js'));
+});
 
 gulp.task('clean', function(){
   return del(['public/css', 'public/js'])
