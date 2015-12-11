@@ -5,9 +5,31 @@ block linkblock
   link(rel="stylesheet", type="text/css", href="css/game.css")
 block scriptblock
   script(src="js/game.js")
+
+mixin row
+  .row
+    .cell x
+    .cell x
+    .cell x
+    .cell x
+  
+mixin board
+  .board
+    +row
+    +row
+    +row
+    +row
   
 block thiscontent
   #game
     #player1 Player 1!
+      input#p1input
+      button#p1inputsubmit move
     #player2 Player 2!
-    #gameboard (game board)
+      input#p2input
+      button#p2inputsubmit move
+    #gameboard 
+      +board
+      +board
+      +board
+      +board
