@@ -85,3 +85,16 @@ describe('Normalizing the board', function(){
     expect(logic.normalize(1)).toEqual(normalforOne)
   })
 })
+
+describe('Winning Conditions', function(){
+  it('should identify single board winning conditions', function(){
+    logic.gamestateReset()
+    logic.gamestate = [
+      [1,1,1,1,0,2,2,2,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,2,2,2,0,0,0,0,0,0,0,0]
+    ]
+    expect(logic.checkIfWon(1)).toEqual(true)
+  })
+})
