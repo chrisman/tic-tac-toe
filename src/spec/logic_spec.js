@@ -35,3 +35,28 @@ describe('inputIsValid', function(){
     expect(logic.inputIsValid([[0],[20]])).toEqual(false)
   })
 })
+
+describe('A legal move', function(){
+  it('is any free space on the board', function(){
+    logic.gamestateReset()
+    expect(logic.moveIsLegal([[0],[2]])).toEqual(true)
+  })
+  it('is not an occupied space', function(){
+    logic.gamestateReset()
+    logic.gamestate[1][2] = 1
+    expect(logic.moveIsLegal([[1],[2]])).toEqual(false)
+  })
+})
+
+describe('Move', function(){
+  it('should occupy a space on the board with a player\'s marker.', function(){
+    logic.gamestateReset()
+    logic.playerMove(1, [[0],[1]])
+    expect(logic.gamestate).toEqual([
+      [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    ])
+  })
+})
