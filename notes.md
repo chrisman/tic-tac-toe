@@ -1,3 +1,11 @@
+__WORKING ON__
+
+* define win state
+
+__TODO__
+
+* detect win state
+
 __MVP__
 
 1. A playable, local pvp game
