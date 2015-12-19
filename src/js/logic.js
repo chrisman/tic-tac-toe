@@ -1,3 +1,16 @@
+var singleBoardWinCondition = [
+  [1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1],
+  [1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0],
+  [0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0],
+  [0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0],
+  [0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1],
+  [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+  [0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0]
+]
+
 module.exports = {
   gamestateReset: function(){
     this.gamestate = [
@@ -28,5 +41,8 @@ module.exports = {
   playerMove: function(mark, move){
     this.gamestate[move[0]][move[1]] = mark
     return
+  },
+  normalize: function(mark){
+    return this.gamestate.map(i => {return i.map(i => { return (i === mark) ? 1 : 0})})
   }
 }
