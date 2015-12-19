@@ -1,6 +1,6 @@
 var $ = require('jquery')
 var player = require('./player')
-var logic = require('/logic')
+var logic = require('./logic')
 
 var playerone = new player.Player()
 var playertwo = new player.Player()
@@ -14,13 +14,16 @@ function begin(a, b){
   output("The game has begun")
 
   var p1move = a.getMove(function(){
-    $('#p1inputsubmit').click(function(){
-      return $('#p1input').val()
+    var move = $('#p1inputsubmit').click(function(){
+      var input = formatInput($('#p1input').val())
+      output(logic.inputIsValid(input))
     })
   })
-  console.log(p1move);
-
   return
+}
+
+function formatInput(s){
+  return s.split(',').map(e => e.trim()).map(e => [e])
 }
 
 function output(){

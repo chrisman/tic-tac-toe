@@ -9213,6 +9213,7 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 var $ = require('jquery')
 var player = require('./player')
+var logic = require('./logic')
 
 var playerone = new player.Player()
 var playertwo = new player.Player()
@@ -9225,14 +9226,17 @@ function begin(a, b){
   output(a["name"], " has challenged ", b["name"], " to a game of tic-tac-toe")
   output("The game has begun")
 
-  $('#p1inputsubmit').click(function(){
-    var move = a.getMove(function(){
-      return $('#p1input').val()
+  var p1move = a.getMove(function(){
+    var move = $('#p1inputsubmit').click(function(){
+      var input = formatInput($('#p1input').val())
+      output(logic.inputIsValid(input))
     })
-    console.log(move);
   })
-
   return
+}
+
+function formatInput(s){
+  return s.split(',').map(e => e.trim()).map(e => [e])
 }
 
 function output(){
@@ -9250,7 +9254,23 @@ module.exports = {
   output: output
 }
 
-},{"./player":3,"jquery":1}],3:[function(require,module,exports){
+},{"./logic":3,"./player":4,"jquery":1}],3:[function(require,module,exports){
+module.exports = {
+  helloworld: function(){
+    return "Hello World!"
+  },
+  inputIsValid: function(move){
+    return (
+      Array.isArray(move)
+      && move.length === 2)
+      && move.every( e => Array.isArray(e)
+      && (move[0] >= 0 && move[0] <= 3)
+      && (move[1] >= 0 && move[1] <= 15)
+    )
+  }
+}
+
+},{}],4:[function(require,module,exports){
 /*
 player.js
 */
