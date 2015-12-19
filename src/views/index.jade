@@ -1,13 +1,13 @@
 extends ./layouts/layout
 
+mixin menubutton(content)
+  p
+    button.btn.btn-default(type="button")= content
+
 block thiscontent
   #main
-    p
-      a(href="#")
-        button#pvc player vs computer
-    p
-      a(href="multilocal.html") 
-        button#pvpl player vs player (local)
-    p
-      a(href="#")
-        button#pvpo player vs player (online)
+  
+    .btn-group-vertical(role="group")
+      +menubutton("human vs human (local)")
+      +menubutton("human vs human (online)")
+      +menubutton("human vs computer")

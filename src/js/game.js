@@ -1,5 +1,6 @@
 var $ = require('jquery')
 var player = require('./player')
+var logic = require('/logic')
 
 var playerone = new player.Player()
 var playertwo = new player.Player()
@@ -12,12 +13,12 @@ function begin(a, b){
   output(a["name"], " has challenged ", b["name"], " to a game of tic-tac-toe")
   output("The game has begun")
 
-  $('#p1inputsubmit').click(function(){
-    var move = a.getMove(function(){
+  var p1move = a.getMove(function(){
+    $('#p1inputsubmit').click(function(){
       return $('#p1input').val()
     })
-    console.log(move);
   })
+  console.log(p1move);
 
   return
 }

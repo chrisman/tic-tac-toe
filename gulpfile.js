@@ -33,6 +33,7 @@ gulp.task('styles', function(){
     .pipe(cssmin())
 })
 
+// http://fettblog.eu/gulp-browserify-multiple-bundles/
 gulp.task('js', function() {
   var files = [
     'src/js/main.js',
