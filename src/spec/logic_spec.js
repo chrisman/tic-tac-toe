@@ -87,7 +87,7 @@ describe('Normalizing the board', function(){
 })
 
 describe('Winning Conditions', function(){
-  it('should identify single board winning conditions', function(){
+  xit('should identify single board winning conditions', function(){
     logic.gamestateReset()
     logic.gamestate = [
       [1,1,1,1,0,2,2,2,0,0,0,0,0,0,0,0],
@@ -96,5 +96,13 @@ describe('Winning Conditions', function(){
       [0,0,0,0,0,2,2,2,0,0,0,0,0,0,0,0]
     ]
     expect(logic.checkIfWon(1)).toEqual(true)
+  }).pend("need array compare 1st")
+})
+
+describe('Array equals', function(){
+  it('should compare arrays', function(){
+    expect(logic.arrayEquals([1], [1])).toEqual(true)
+    expect(logic.arrayEquals([1], [2])).toEqual(false)
+    expect(logic.arrayEquals([1, 2, 3], [1, 2, 3])).toEqual(true)
   })
 })

@@ -44,5 +44,13 @@ module.exports = {
   },
   normalize: function(mark){
     return this.gamestate.map(i => {return i.map(i => { return (i === mark) ? 1 : 0})})
+  },
+  checkIfWon: function(mark) {
+    return
+  },
+  arrayEquals: function(a1, a2) {
+    return (a1.every(function(curr, idx){
+      return curr === a2[idx]
+    }))
   }
 }
